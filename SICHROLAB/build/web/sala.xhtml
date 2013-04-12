@@ -10,7 +10,7 @@
 
         <ui:composition template="template.xhtml">
 
-            <ui:define name="titulo_pagina">Manter Sala</ui:define>
+            <ui:define name="titulo_pagina">Menu Sala</ui:define>
 
             <ui:define name="form_manutencao">
 
@@ -20,7 +20,7 @@
                     <p:panel id="formPanelPesquisa" header="Pesquisar Salas Por Nome">
                         <h:panelGrid columns="3">
                             <h:outputLabel value="Nome da Sala:*"/>
-                            <p:inputText id="nomeDaSala" maxlength="30" value ="#{salaMB.nomeDaSala}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nomeDaSala"/>
+                            <p:inputText id="nomeDaSala" style="text-transform: lowercase" maxlength="30" value ="#{salaMB.nomeDaSala}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nomeDaSala"/>
                         </h:panelGrid>
                         <p:commandButton value="Pesquisar" action="#{salaMB.pesquisarPorNomeDeSala()}" update="formPesquisa, :tabela, :formulario"/>
                     </p:panel>
@@ -69,7 +69,7 @@
                         </f:facet>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="Codigo da Sala" />
+                                <h:outputText value="Código da Sala" />
                             </f:facet>
                             <p:commandLink value="#{s.codigoSala}" update=":formulario">
                                 <f:setPropertyActionListener value="#{s}" target="#{salaMB.sala}"/> 

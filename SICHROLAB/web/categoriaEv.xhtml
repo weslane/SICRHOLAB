@@ -20,7 +20,7 @@
                     <p:panel id="formPanelPesquisa" header="Pesquisar Categorias de Evento por Nome">
                         <h:panelGrid columns="3">
                             <h:outputLabel value="Nome:*"/>
-                            <p:inputText id="nome" value ="#{categoriaDeEventoMB.nome}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nome"/>
+                            <p:inputText id="nomePesquisa" style="text-transform: lowercase" value ="#{categoriaDeEventoMB.nome}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nomePesquisa"/>
                         </h:panelGrid>
                         <p:commandButton value="Pesquisar" action="#{categoriaDeEventoMB.pesquisarPorNome()}" update="formPesquisa, :tabela, :formulario"/>
                     </p:panel>
@@ -59,7 +59,7 @@
                         </f:facet>
                         <p:column >  
                             <f:facet name="header">
-                                <h:outputText value="Codigo da Categoria de Evento" />   
+                                <h:outputText value="Código da Categoria de Evento" />   
                             </f:facet>
                             <p:commandLink value="#{c.codCatEvento}" update=":formulario">
                                 <f:setPropertyActionListener value="#{c}" target="#{categoriaDeEventoMB.catEvento}"/> 

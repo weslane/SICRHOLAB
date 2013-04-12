@@ -6,11 +6,11 @@
     <h:head>
         <title>Manutenção de Usuario</title>
     </h:head>
-    <h:body>
+    <h:body onload="document.getElementById('formulario:nome').focus()">
 
         <ui:composition template="template.xhtml">
 
-            <ui:define name="titulo_pagina">Manter Usuarios</ui:define>
+            <ui:define name="titulo_pagina">Menu Usuarios</ui:define>
 
             <ui:define name="form_manutencao">
                 
@@ -40,11 +40,11 @@
                         <h:panelGrid columns="3">
 
                             <h:outputLabel for="nome" value="Nome: *" />  
-                            <p:inputText id="nome" 
+                            <p:inputText id="nome"  
                                          value="#{usuarioMB.usuario.nome}"  requiredMessage="Campo Obrigatório" required="true" label="Nome"/>  
                             <p:message for="nome" />
 
-                            <h:outputLabel for="matricula" value="Matricula: *" />  
+                            <h:outputLabel for="matricula" value="Matrícula: *" />  
                             <p:inputMask mask="9999999999" id="matricula" value="#{usuarioMB.usuario.matricula}" maxlength="10" required="true" requiredMessage="Campo Obrigatório" label="Matricula"/>  
                             <p:message for="matricula" /> 
 
@@ -69,7 +69,7 @@
                         <p:commandButton value="Alterar" update="formulario, :tabela" action="#{usuarioMB.alterarUsuario()}"/>
                         <p:commandButton value="Excluir" update="formulario, :tabela" action="#{usuarioMB.excluirUsuario()}"/>    
                     </p:panel><br/>
-                    <h:outputText value="#{usuarioMB.mensagem}" style="font: bolder"/>
+                    <b><h:outputText value="#{usuarioMB.mensagem}" style="font: bolder"/></b>
                 </h:form>
                 <br/><br/>
                 <h:form id="tabela">
@@ -81,7 +81,7 @@
                         </f:facet>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="Matricula" />
+                                <h:outputText value="Matrícula" />
                             </f:facet>
                             <p:commandLink value="#{u.matricula}" update=":formulario">
                                 <f:setPropertyActionListener value="#{u}" target="#{usuarioMB.usuario}"/>  

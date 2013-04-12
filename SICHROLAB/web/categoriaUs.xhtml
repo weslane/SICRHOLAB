@@ -28,7 +28,7 @@
                 <hr></hr>
                 
                 <h:form id="formPesquisaTodos">
-                    <p:panel id="formPanelPesquisa" header="Pesquisar Todos os Usuários">
+                    <p:panel id="formPanelPesquisa" header="Pesquisar Todas as categorias">
                         <p:commandButton value="Pesquisar Todos" action="#{categoriaUsuarioMB.pesquisar()}" update=":formPesquisa, :tabela, :formulario"/>
                     </p:panel>
                 </h:form>
@@ -51,7 +51,7 @@
                         <p:commandButton  value="Inserir" update="formulario, :tabela" action="#{categoriaUsuarioMB.inserirCategoriaUsuario()}"/>
                         <p:commandButton value="Alterar" update="formulario, :tabela" action="#{categoriaUsuarioMB.alterarCategoriaUsuario()}"/>
                         <p:commandButton value="Excluir" update="formulario, :tabela" action="#{categoriaUsuarioMB.excluirCategoriaUsuario()}"/><br/><br/>
-                        <h:outputText value="#{categoriaUsuarioMB.mensagem}" style="font: bolder"/>
+                        <b><h:outputText value="#{categoriaUsuarioMB.mensagem}" style="font: bolder"/></b>
                     </p:panel>
                 </h:form>
 
