@@ -18,7 +18,6 @@ import javax.faces.context.FacesContext;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import modelo.CategoriaUsuario;
-import modelo.Sala;
 import modelo.Usuario;
 
 /**
@@ -121,16 +120,6 @@ public class UsuarioMB {
             }
         }
         setUsuarioPesquisado("");
-    }
-
-    public String retornarPrioridade(Usuario usuario) {
-        List<CategoriaUsuario> result = daoCategoria.findCategoriaUsuarioEntities();
-        for (CategoriaUsuario c : result) {
-            if (usuario.getCategoriaUsuario().getPrioridade().equals(c.getPrioridade())) {
-                return c.getPrioridade();
-            }
-        }
-        return "Prioridade";
     }
 
     public List<CategoriaUsuario> categorias() {
