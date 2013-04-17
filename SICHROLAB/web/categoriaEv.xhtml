@@ -15,41 +15,9 @@
             <ui:define name="titulo_pagina">Manutenção de Categoria de Eventos</ui:define>
 
             <ui:define name="form_manutencao">
-
-                <h:form id="formPesquisa">
-                    <p:panel id="formPanelPesquisa" header="Pesquisar Categorias de Evento por Nome">
-                        <h:panelGrid columns="3">
-                            <h:outputLabel value="Nome:*"/>
-                            <p:inputText id="nomePesquisa" style="text-transform: lowercase" value ="#{categoriaDeEventoMB.nome}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nomePesquisa"/>
-                        </h:panelGrid>
-                        <p:commandButton value="Pesquisar" action="#{categoriaDeEventoMB.pesquisarPorNome()}" update="formPesquisa, :tabela, :formulario"/>
-                    </p:panel>
-                </h:form>
-                <hr></hr>
-                <h:form id="formPesquisaTodos">
-                    <p:panel id="formPanelPesquisa" header="Pesquisar Todas as Categorias de Evento">
-                        <p:commandButton value="Pesquisar Todas" action="#{categoriaDeEventoMB.pesquisar()}" update=":formPesquisa, :tabela, :formulario"/>
-                    </p:panel>
-                </h:form>
-                <hr></hr>
-                <h:form id="formulario">
-                    <p:panel id="formPanel" header="Manutenção de Categoria de Evento">
-                        <h:inputHidden value="#{categoriaDeEventoMB.catEvento.codCatEvento}"/>
-                        <h:panelGrid columns="3">
-                            <h:outputLabel value="Prioridade:*"/>
-                            <p:inputText id="prioridade" value="#{categoriaDeEventoMB.catEvento.prioridade}" validatorMessage="Campo Só Permite Números" required="true" requiredMessage="Campo Obrigatório">
-                                <f:validateRegex for="prioridade" pattern="\d*[0-9](d*[0-9])?"/>
-                            </p:inputText><p:message for="prioridade"/>
-                            <h:outputLabel value="Nome:*"/>
-                            <p:inputText id="nome" maxlength="60" value ="#{categoriaDeEventoMB.catEvento.descricao}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nome"/>
-                        </h:panelGrid>
-                        <p:commandButton value="Cadastrar" action="#{categoriaDeEventoMB.inserirCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/>
-                        <p:commandButton value="Alterar" action="#{categoriaDeEventoMB.alterarCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/>
-                        <p:commandButton value="Excluir" action="#{categoriaDeEventoMB.excluirCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/><br/><br/>
-                        <b><h:outputText value="#{categoriaDeEventoMB.mensagem}" style="font: bolder"/></b>
-                    </p:panel>
-                </h:form>
-                <hr></hr>
+                
+                <h:form></h:form>
+                
                 <h:form id="tabela">
                     <p:dataTable id="dataTable" var="c" value="#{categoriaDeEventoMB.catEventos}" paginator="true" rows="5"  
                                  paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
@@ -83,6 +51,43 @@
                         </p:column>
                     </p:dataTable>
                 </h:form>
+                <br/>
+                
+                 <h:form id="formulario">
+                    <p:panel id="formPanel" header="Manutenção de Categoria de Evento">
+                        <h:inputHidden value="#{categoriaDeEventoMB.catEvento.codCatEvento}"/>
+                        <h:panelGrid columns="3">
+                            <h:outputLabel value="Prioridade:*"/>
+                            <p:inputText id="prioridade" value="#{categoriaDeEventoMB.catEvento.prioridade}" validatorMessage="Campo Só Permite Números" required="true" requiredMessage="Campo Obrigatório">
+                                <f:validateRegex for="prioridade" pattern="\d*[0-9](d*[0-9])?"/>
+                            </p:inputText><p:message for="prioridade"/>
+                            <h:outputLabel value="Nome:*"/>
+                            <p:inputText id="nome" maxlength="60" value ="#{categoriaDeEventoMB.catEvento.descricao}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nome"/>
+                        </h:panelGrid>
+                        <p:commandButton value="Cadastrar" action="#{categoriaDeEventoMB.inserirCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/>
+                        <p:commandButton value="Alterar" action="#{categoriaDeEventoMB.alterarCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/>
+                        <p:commandButton value="Excluir" action="#{categoriaDeEventoMB.excluirCategoriaDeEvento()}" update=":formPesquisa, :tabela, formulario"/><br/><br/>
+                        <b><h:outputText value="#{categoriaDeEventoMB.mensagem}" style="font: bolder"/></b>
+                    </p:panel>
+                </h:form>
+                <hr></hr>
+
+                <h:form id="formPesquisa">
+                    <p:panel id="formPanelPesquisa" header="Pesquisar Categorias de Evento por Nome">
+                        <h:panelGrid columns="3">
+                            <h:outputLabel value="Nome:*"/>
+                            <p:inputText id="nomePesquisa" style="text-transform: lowercase" value ="#{categoriaDeEventoMB.nome}" required="true" requiredMessage="Campo Obrigatório"/><p:message for="nomePesquisa"/>
+                        </h:panelGrid>
+                        <p:commandButton value="Pesquisar" action="#{categoriaDeEventoMB.pesquisarPorNome()}" update="formPesquisa, :tabela, :formulario"/>
+                    </p:panel>
+                </h:form>
+                <hr></hr>
+                <h:form id="formPesquisaTodos">
+                    <p:panel id="formPanelPesquisa" header="Pesquisar Todas as Categorias de Evento">
+                        <p:commandButton value="Pesquisar Todas" action="#{categoriaDeEventoMB.pesquisar()}" update=":formPesquisa, :tabela, :formulario"/>
+                    </p:panel>
+                </h:form>
+                          
 
             </ui:define>
 

@@ -21,7 +21,7 @@
             <!--top-Header-menu-->
             <div id="user-nav" class="navbar navbar-inverse">
                 <ul class="nav">
-                    <li class="" ><a title="" href="#"><i class="icon icon-user"></i> <span class="text">Perfil</span></a></li>
+                    <li class="" ><h:link ><i class="icon icon-user"></i> <span class="text">Perfil</span></h:link></li>
                     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Configurações</span></a></li>
                     <li class=""><a title="" href="#"><i class="icon icon-share-alt"></i> <span class="text">Entrar</span></a></li>
                 </ul>
@@ -32,17 +32,17 @@
             <div id="sidebar">
                 <a href="#" class="visible-phone"><i class="icon icon-home"></i> Menu</a>
                 <ul>
-                    <li class="active"><a href="faces/index.xhtml"><i class="icon icon-home"></i> <span>Início</span></a> </li>
+                    <li class="active"><h:link outcome="index"><i class="icon icon-home"></i> <span>Início</span></h:link> </li>
                     <li> <a href="#"><i class="icon icon-inbox"></i> <span>Reservas solicitadas</span></a> </li>
                     <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Adicionar</span></a>
                         <ul>
-                            <li><a href="faces/usuario.xhtml">Menu Usuário</a></li>
-                            <li><a href="faces/categoriaUs.xhtml">Categoria usuário</a></li>
-                            <li><a href="faces/categoriaEv.xhtml">Categoria de eventos</a></li>
-                            <li><a href="faces/sala.xhtml">Menu Salas</a></li>  
-                            <li><a href="#">Turmas</a></li>
-                            <li><a href="#">Disciplinas</a></li>
-                            <li><a href="#">Reservas</a></li>
+                            <li><h:link outcome="usuario">Menu Usuário</h:link></li>
+                            <li><h:link outcome="categoriaUs">Categoria usuário</h:link></li>
+                            <li><h:link outcome="categoriaUs">Categoria de eventos</h:link></li>
+                            <li><h:link outcome="sala">Menu Salas</h:link></li>  
+                            <li><h:link >Turmas</h:link></li>
+                            <li><h:link>Disciplinas</h:link></li>
+                            <li><h:link >Reservas</h:link></li>
                         </ul>
                     </li>
                 </ul>
