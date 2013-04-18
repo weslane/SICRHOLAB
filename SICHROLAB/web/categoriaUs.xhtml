@@ -52,6 +52,8 @@
                     </p:dataTable>
                 </h:form>
                 
+                <hr></hr>
+                
                 <h:form id="formulario"> 
                     <p:panel id="panel" header="Cadastro de Categoria">    
                         <h:inputHidden value="#{categoriaUsuarioMB.categoriaUsuario.codCatUser}"/>
@@ -72,7 +74,8 @@
                         <b><h:outputText value="#{categoriaUsuarioMB.mensagem}" style="font: bolder"/></b>
                     </p:panel>
                 </h:form>
-                <br/>
+                
+                <hr></hr>
                 
                 <!--Formulario de pesquisa--> 
                 
@@ -85,6 +88,7 @@
                         <p:commandButton value="Pesquisar" action="#{categoriaUsuarioMB.pesquisarPorCategoria()}" update=":formPesquisa, :tabela, :formulario"/>
                     </p:panel>
                 </h:form>
+                
                 <hr></hr>
                 
                 <h:form id="formPesquisaTodos">
