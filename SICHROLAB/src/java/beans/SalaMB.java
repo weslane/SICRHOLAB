@@ -111,15 +111,6 @@ public class SalaMB {
         pesquisar();
     }
     
-    public boolean salaJaEstaCadastrada(){
-        for(Sala s : daoSala.findSalaEntities()){
-            if(sala.getNomeSala().equals(s.getNomeSala())){
-                return true;
-            }
-        }
-        return false;
-    }
-    
     public void pesquisar(){
         salas = daoSala.findSalaEntities();
     }
