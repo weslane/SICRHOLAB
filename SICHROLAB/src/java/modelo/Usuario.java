@@ -28,6 +28,8 @@ public class Usuario implements Serializable {
     private String email;
     
     private String telefone;
+    
+    private String senha;
    
     @OneToOne
     private CategoriaUsuario categoriaUsuario; 
@@ -121,5 +123,19 @@ public class Usuario implements Serializable {
 
     public void setCategoriaUsuario(CategoriaUsuario categoriaUsuario) {
         this.categoriaUsuario = categoriaUsuario;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
