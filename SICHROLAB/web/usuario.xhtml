@@ -82,6 +82,10 @@
                             <h:outputLabel for="matricula" value="Matrícula: *" />  
                             <p:inputMask mask="9999999999" id="matricula" value="#{usuarioMB.usuario.matricula}" maxlength="10" required="true" requiredMessage="Campo Obrigatório" label="Matricula"/>  
                             <p:message for="matricula" /> 
+                            
+                            <h:outputLabel for="senha" value="Senha: *" />  
+                            <p:inputText id="senha" value="#{usuarioMB.usuario.senha}" maxlength="30" required="true" requiredMessage="Campo Obrigatório" label="Senha"/>  
+                            <p:message for="senha" />
 
                             <h:outputLabel for="telefone" value="Telefone: " />  
                             <p:inputMask id="telefone" mask="(99)9999-9999" value="#{usuarioMB.usuario.telefone}" label="Telefone"/>  
