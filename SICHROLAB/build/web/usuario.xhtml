@@ -82,11 +82,16 @@
                             <h:outputLabel for="matricula" value="Matrícula: *" />  
                             <p:inputMask mask="9999999999" id="matricula" value="#{usuarioMB.usuario.matricula}" maxlength="10" required="true" requiredMessage="Campo Obrigatório" label="Matricula"/>  
                             <p:message for="matricula" /> 
+                       
+                             <h:outputLabel for="pwd1" value="Senha: *" />  
+                             <p:password id="pwd1" value="#{usuarioMB.usuario.senha}"   requiredMessage="Campo Obrigatório" feedback="true" label="Senha" required="true"/>  
+                             <p:message for="pwd1"/>
+                             
+                              <h:outputLabel for="pwd2" value="Confirme a senha: *" />  
+                              <p:password id="pwd2" value="#{usuarioMB.confirmacao}" requiredMessage="Campo Obrigatório" label="Confirmação" required="true"/>  
+                              <p:message for="pwd2"/>
                             
-                            <h:outputLabel for="senha" value="Senha: *" />  
-                            <p:inputText id="senha" value="#{usuarioMB.usuario.senha}" maxlength="30" required="true" requiredMessage="Campo Obrigatório" label="Senha"/>  
-                            <p:message for="senha" />
-
+                            
                             <h:outputLabel for="telefone" value="Telefone: " />  
                             <p:inputMask id="telefone" mask="(99)9999-9999" value="#{usuarioMB.usuario.telefone}" label="Telefone"/>  
                             <p:message for="telefone"/>
