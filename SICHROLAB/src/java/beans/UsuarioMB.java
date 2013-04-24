@@ -35,6 +35,7 @@ public class UsuarioMB {
     private List<Usuario> usuarios = new ArrayList<Usuario>();
     private String mensagem;
     private String usuarioPesquisado;
+    private String confirmacao;
     private CategoriaUsuario categoria = new CategoriaUsuario();
 
     public UsuarioMB() {
@@ -44,10 +45,14 @@ public class UsuarioMB {
     public void inserirUsuario() {
 
         try{
-        usuario.setCategoriaUsuario(categoria);
-        daoUsuario.create(usuario);
-        usuario = new Usuario();
-        setMensagem("Usuário cadastrado com sucesso");
+            if(usuario.getSenha().equals(confirmacao)){
+                usuario.setCategoriaUsuario(categoria);
+                daoUsuario.create(usuario);
+                usuario = new Usuario();
+                setMensagem("Usuário cadastrado com sucesso");
+           }else{
+            setMensagem("Senhas não conferem");
+            }
         }catch(Exception ex){
             setMensagem("Usuário já cadastrado no sistema");
             Logger.getLogger(UsuarioMB.class.getName()).log(Level.SEVERE, null, ex);
@@ -141,6 +146,16 @@ public class UsuarioMB {
     public void setCategoria(CategoriaUsuario categoria) {
         this.categoria = categoria;
     }
+
+    public String getConfirmacao() {
+        return confirmacao;
+    }
+
+    public void setConfirmacao(String confirmacao) {
+        this.confirmacao = confirmacao;
+    }
+    
+    
 
     public void pesquisar() {
         usuarios = daoUsuario.findUsuarioEntities();

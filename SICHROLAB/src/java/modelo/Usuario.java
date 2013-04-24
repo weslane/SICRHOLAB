@@ -30,7 +30,9 @@ public class Usuario implements Serializable {
     private String telefone;
    
     @OneToOne
-    private CategoriaUsuario categoriaUsuario; 
+    private CategoriaUsuario categoriaUsuario;
+    
+    private String senha;
 
    
 
@@ -107,6 +109,15 @@ public class Usuario implements Serializable {
     public String getTelefone() {
         return telefone;
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
 
     /**
      * @param telefone the telefone to set
