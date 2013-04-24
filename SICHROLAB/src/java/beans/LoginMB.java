@@ -38,10 +38,12 @@ public class LoginMB {
     public String login(){
         //acessar o banco de dados e validar;
         usuario = daoUsuario.findUsuario(this.usuario);
-        if (usuario!=null){
+        
+        if (usuario==null){
             setMensagem("");
-            return "/index.xhtml";
+            return "/usuario.xhtml";
         }
+        
         usuario = new Usuario();
         setMensagem("Login ou senha incorreto!");
         return "/login.xhtml";
