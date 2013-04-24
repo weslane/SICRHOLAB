@@ -27,11 +27,12 @@ public class LoginMB {
     
     UsuarioJpaController daoUsuario = new UsuarioJpaController(factory);
     
-    private Usuario usuario = new Usuario();
+    private Usuario usuario;
     
     private String mensagem;
 
     public LoginMB() {
+        usuario = new Usuario();
     }
     
     public String login(){
