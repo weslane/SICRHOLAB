@@ -27,21 +27,20 @@ public class LoginMB {
     
     UsuarioJpaController daoUsuario = new UsuarioJpaController(factory);
     
-    private Usuario usuario;
+    private Usuario usuario = new Usuario();;
     
     private String mensagem;
 
     public LoginMB() {
-        usuario = new Usuario();
     }
     
     public String login(){
         //acessar o banco de dados e validar;
         usuario = daoUsuario.findUsuario(this.usuario);
         
-        if (usuario==null){
+        if (usuario!=null){
             setMensagem("");
-            return "/usuario.xhtml";
+            return "/index.xhtml";
         }
         
         usuario = new Usuario();
